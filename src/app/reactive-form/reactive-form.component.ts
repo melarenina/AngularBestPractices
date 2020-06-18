@@ -34,9 +34,8 @@ export class ReactiveFormComponent implements OnInit {
         uniqueEmailValidator(this.userService) // async validator
       ],
       emailConfirm: ['',
-        [Validators.required, // sync validator
-        compareValidator('email'), // sync validator
-        uniqueEmailValidator(this.userService)] // async validator
+        [Validators.required, compareValidator('email')], // sync validator
+        uniqueEmailValidator(this.userService) // async validator
       ],
       password: ['', Validators.required],
       passwordConfirm: ['', [Validators.required, compareValidator('password')]],

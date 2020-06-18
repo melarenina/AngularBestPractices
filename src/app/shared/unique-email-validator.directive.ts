@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserService } from './user.service';
 
-export function uniqueEmailValidator(userService: UserService): AsyncValidatorFn{
+export function uniqueEmailValidator(userService: UserService): AsyncValidatorFn {
   return (c: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
     return userService.getUserByEmail(c.value).pipe(
       map(users => { // Map - transform the items emitted by an Observable by applying a function to each item.
@@ -24,11 +24,7 @@ export class UniqueEmailValidatorDirective implements AsyncValidator {
   constructor(private userService: UserService) { }
 
   validate(c: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
-    return this.userService.getUserByEmail(c.value).pipe(
-      map(users => { // Map - transform the items emitted by an Observable by applying a function to each item.
-        return users && users.length > 0 ? { uniqueEmail: true } : null;
-      })
-    );
+    return uniqueEmailValidator(this.userService)(c);
   }
 
 }

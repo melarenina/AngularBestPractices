@@ -16,14 +16,14 @@
     <label>Email confirm</label>
     <input type="email" class="form-control" formControlName="emailConfirm" />
     <div class="text-danger" *ngIf="emailConfirm.invalid && (emailConfirm.dirty || emailConfirm.touched)">
+      <div *ngIf="emailConfirm.errors['uniqueEmail']">
+        Email Confirm already exists!
+      </div>
       <div *ngIf="emailConfirm.errors['required']">
         Email Confirmation is required!
       </div>
       <div *ngIf="emailConfirm.errors['compare']">
         Email Confirmation do not match!
-      </div>
-      <div *ngIf="email.errors['uniqueEmail']">
-        Email already exists!
       </div>
     </div>
   </div>
