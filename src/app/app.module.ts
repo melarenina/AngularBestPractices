@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DemoModule } from './demo/demo.module';
 import { CoreModule } from './core/core.module';
 
 
@@ -17,7 +16,6 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    DemoModule,
     CoreModule
   ],
   providers: [],

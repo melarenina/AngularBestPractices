@@ -7,9 +7,6 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TdFormComponent } from './td-form/td-form.component';
 import { DemoComponent } from './demo.component';
 
-
-
-
 @NgModule({
   declarations: [
     TdFormComponent,

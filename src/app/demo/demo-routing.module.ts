@@ -9,7 +9,7 @@ import { TdFormComponent } from './td-form/td-form.component';
 
 const routes: Routes = [
   {
-    path: 'demo', component: DemoComponent, children: [
+    path: '', component: DemoComponent, children: [
       { path: '', component: TdFormComponent },
       { path: 'reactiveForm', component: ReactiveFormComponent }
     ]
