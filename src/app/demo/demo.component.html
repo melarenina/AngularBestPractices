@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-3">
+    <div class="sticky-top">
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="./"
+            [routerLinkActiveOptions]="{exact: true}">Template-driven</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="./reactiveForm">Reactive Form</a>
+        </li>
+      </ul>
+      <hr>
+    </div>
+  </div>
+  <div class="col">
+    <router-outlet></router-outlet> <!-- Direciona pros childrens -->
+  </div>
+</div>

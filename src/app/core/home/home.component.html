@@ -1,0 +1,32 @@
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">Welcome to AureaG, the most beautiful thing you'll ever know!</p>
+  <hr class="my-4">
+  <p>Go ahead, dive deeper</p>
+  <a class="btn btn-primary btn-lg" routerLink="/demo" role="button">Learn more</a>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Angular CLI generate</h5>
+    <br>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Scaffold</th>
+            <th>Usage</th>
+            <th>Alias</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cliGenerate">
+            <td>{{ item.Scaffold }}</td>
+            <td>{{ item.Usage }}</td>
+            <td>{{ item.Alias }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

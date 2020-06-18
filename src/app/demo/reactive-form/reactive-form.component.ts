@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { compareValidator } from '../shared/compare-validator.directive';
-import { UserService } from '../shared/user.service';
-import { uniqueEmailValidator } from '../shared/unique-email-validator.directive';
-import { uniqueUsernameValidator } from '../shared/unique-username-validator.directive';
+import { compareValidator } from '../../shared/compare-validator.directive';
+import { UserService } from '../../shared/user.service';
+import { uniqueEmailValidator } from '../../shared/unique-email-validator.directive';
+import { uniqueUsernameValidator } from '../../shared/unique-username-validator.directive';
 
 @Component({
   selector: 'app-reactive-form',
