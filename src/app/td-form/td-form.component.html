@@ -1,0 +1,65 @@
+<h2>Template-drive Form</h2>
+<form #f="ngForm">
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" name="email" #email="ngModel" ngModel required uniqueEmail />
+    <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+      <div *ngIf="email.errors['required']">
+        Email is required!
+      </div>
+      <div *ngIf="email.errors['uniqueEmail']">
+        Email already exists!
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Email confirm</label>
+    <input type="email" class="form-control" name="emailConfirm" #emailConfirm="ngModel" ngModel required
+      compare="email" uniqueEmail />
+    <div class="text-danger" *ngIf="emailConfirm.invalid && (emailConfirm.dirty || emailConfirm.touched)">
+      <div *ngIf="emailConfirm.errors['required']">
+        Email Confirmation is required!
+      </div>
+      <div *ngIf="emailConfirm.errors['compare']">
+        Email Confirmation do not match!
+      </div>
+      <div *ngIf="emailConfirm.errors['uniqueEmail']">
+        Email Confirmation already exists!
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" #password="ngModel" ngModel required />
+    <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+      Password is required!
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Password confirm</label>
+    <input type="password" class="form-control" name="passwordConfirm" #pwConfirm="ngModel" ngModel required
+      compare="password" />
+    <div class="text-danger" *ngIf="pwConfirm.invalid && (pwConfirm.dirty || pwConfirm.touched)">
+      <div *ngIf="pwConfirm.errors['required']">
+        Password Confirmation is required!
+      </div>
+      <div *ngIf="pwConfirm.errors['compare']">
+        Password Confirmation do not match!
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn-primary" style="border-radius: 4px;" [disabled]="f.invalid">
+    Submit
+  </button>
+</form>
+
+<br />
+<hr />
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Form Status: {{ f.status }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Form Value</h6>
+    <pre>{{ f.value | json }}</pre>
+  </div>
+</div>
