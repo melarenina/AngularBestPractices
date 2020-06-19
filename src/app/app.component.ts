@@ -1,6 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -8,20 +6,14 @@ import { Subscription } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit{
 
   subscription: Subscription;
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
-    this.subscription = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => window.scrollTo(0, 0));
-  }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
 }
